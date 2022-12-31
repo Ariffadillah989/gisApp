@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\MapLocation;
-
+use App\Http\Livewire\RsLocation;
+use App\Http\Livewire\RumahSakit;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/map', MapLocation::class);
+Route::get('/rs-location', RsLocation::class);
+Route::get('/RumahSakit', RumahSakit::class);
+
+
