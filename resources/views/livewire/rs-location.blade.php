@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-dark text-white">
-                    Menu Utama
+                    Rumah Sakit
                 </div>
                 <div class="card-body">
                     <div wire:ignore id='map' style="width: 100%; height: 70vh;" position="fixed"></div>
@@ -93,48 +93,6 @@
                     "image": "https://images.unsplash.com/photo-1583953458882-302655b5c376?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTV8fGhvc3BpdGFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60 ",
                     "description": "Puskesmas Sigli"
                 }
-                },
-                {
-                "type": "Feature",
-                "geometry": {
-                    "coordinates": [
-                    "95.9755208784031",
-                    "5.358000513623509"
-                    ],
-                    "type": "Point"
-                },
-                "properties": {
-                    "message": "oke mantap Edit",
-                    "iconSize": [
-                    50,
-                    50
-                    ],
-                    "locationId": 29,
-                    "title": "Puskesmas",
-                    "image": "https://images.unsplash.com/photo-1583953458882-302655b5c376?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTV8fGhvc3BpdGFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60 ",
-                    "description": "Puskesmas Sigli"
-                }
-                },
-                {
-                "type": "Feature",
-                "geometry": {
-                    "coordinates": [
-                    "95.930717259018",
-                    "5.376116846068726"
-                    ],
-                    "type": "Point"
-                },
-                "properties": {
-                    "message": "oke mantap Edit",
-                    "iconSize": [
-                    50,
-                    50
-                    ],
-                    "locationId": 29,
-                    "title": "Puskesmas",
-                    "image": "https://images.unsplash.com/photo-1583953458882-302655b5c376?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTV8fGhvc3BpdGFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60 ",
-                    "description": "Puskesmas Sigli"
-                }
                 }
             ]
             }
@@ -170,6 +128,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <a type="button" class="btn btn-primary" href="/RumahSakit" text-align="center">Lihat Detail</a>
                             </div>`
 
                     const popUp = new mapboxgl.Popup({
