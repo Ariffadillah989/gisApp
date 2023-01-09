@@ -24,5 +24,3 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/map', MapLocation::class);
 Route::get('/rs-location', RsLocation::class);
 Route::get('/RumahSakit', RumahSakit::class);
-
-
