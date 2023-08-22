@@ -49,55 +49,7 @@
             zoom: 12
             });
 
-            const geoJSon = {
-            "type": "FeatureCollection",
-            "features": [
-                {
-                "type": "Feature",
-                "geometry": {
-                    "coordinates": [
-                    "95.958415",
-                    "5.379468"
-                    ],
-                    "type": "Point"
-                },
-                "properties": {
-                    "message": "Rumah Sakit",
-                    "iconSize": [
-                    50,
-                    50
-                    ],
-                    "locationId": 30,
-                    "title": "Rumah Sakit Umum Sigli",
-                    "image": "https://images.unsplash.com/photo-1533042789716-e9a9c97cf4ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGhvc3BpdGFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-                    "description": "Rumah Sakit"
-                }
-                },
-                {
-                "type": "Feature",
-                "geometry": {
-                    "coordinates": [
-                    "95.961821",
-                    "5.379162"
-                    ],
-                    "type": "Point"
-                },
-                "properties": {
-                    "message": "oke mantap Edit",
-                    "iconSize": [
-                    50,
-                    50
-                    ],
-                    "locationId": 29,
-                    "title": "Puskesmas",
-                    "image": "https://images.unsplash.com/photo-1583953458882-302655b5c376?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTV8fGhvc3BpdGFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60 ",
-                    "description": "Puskesmas Sigli"
-                }
-                }
-            ]
-            }
-
-            const loadLocations = () => {
+            const loadLocations = (geoJson) => {
                 geoJSon.features.forEach((location) => {
                     const {geometry, properties} = location
                     const {iconSize, locationId, title, image, description} = properties
@@ -142,7 +94,7 @@
                 })
             }
 
-            loadLocations()
+            loadLocations({!!$geoJson!!})
 
             const style = "satellite-v9"
             // light-v10, outdoor-v11, dark-v10, street-v11 

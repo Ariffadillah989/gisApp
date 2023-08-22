@@ -48,9 +48,9 @@
             center: defaultLocation,
             zoom: 12
             });
-            
-            const loadLocations = (geoJSon) => {
-                geoJSon.features.forEach((location) => {
+
+            const loadLocations = (geoJson) => {
+                geoJson.features.forEach((location) => {
                     const {geometry, properties} = location
                     const {iconSize, locationId, title, image, description} = properties
 
@@ -80,6 +80,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <a type="button" class="btn btn-primary" href="/RumahSakit" text-align="center">Lihat Detail</a>
                             </div>`
 
                     const popUp = new mapboxgl.Popup({
