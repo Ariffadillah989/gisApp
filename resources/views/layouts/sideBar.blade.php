@@ -3,24 +3,24 @@
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
             <a href="/map" class="nav-link link- " aria-current="page">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+              <svg class="bi me-2" width="16" height="16"><use ></use></svg>
               Home
             </a>
           </li>
           <li>
             <a href="/rs-location" class="nav-link link-dark">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              <svg class="bi me-2" width="16" height="16"><use ></use></svg>
               Rumah Sakit
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+            <a href="/puskesmas" class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use ></use></svg>
               Puskesmas
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link link-dark">
+            <a href="/apotek" class="nav-link link-dark">
               <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
               Apotek
             </a>
@@ -28,3 +28,4 @@
         </ul>
         <hr>
       </div>
+      

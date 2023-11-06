@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-dark text-white">
-                    Menu Utama
+                 Home
                 </div>
                 <div class="card-body">
                     <div wire:ignore id='map' style="width: 100%; height: 70vh;" position="fixed"></div>
@@ -42,17 +42,19 @@
         document.addEventListener('livewire:load', () => {
             const defaultLocation = [95.95766809519847, 5.3817439090802]
 
-            mapboxgl.accessToken = '{{env('MAPBOX_KEY')}}';
+            mapboxgl.accessToken = 'pk.eyJ1IjoiYzB3c2FyIiwiYSI6ImNsbmJmaXZnMjA0NnoycXRkOGFuMm5teWcifQ.hdWGWLolEvFZNJapdTyTCg';
             var map = new mapboxgl.Map({
             container: 'map',
             center: defaultLocation,
             zoom: 12
             });
 
+
+
             const loadLocations = (geoJson) => {
                 geoJson.features.forEach((location) => {
                     const {geometry, properties} = location
-                    const {iconSize, locationId, title, image, description} = properties
+                    const {iconSize, locationId, title, image, description, type} = properties
 
                     let markerElement = document.createElement('div')
                     markerElement.className = 'marker' + locationId
@@ -80,7 +82,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <a type="button" class="btn btn-primary" href="/RumahSakit" text-align="center">Lihat Detail</a>
+                                <a type="button" class="btn btn-primary" href="${type}" text-align="center">Lihat Detail</a>
                             </div>`
 
                     const popUp = new mapboxgl.Popup({
@@ -108,7 +110,7 @@
 
                 @this.long = longitude
                 @this.lat = lattidude
-            })
+            }) 
         });
         
     </script>

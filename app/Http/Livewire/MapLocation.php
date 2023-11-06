@@ -26,6 +26,7 @@ class MapLocation extends Component
                     'locationId' => $location->Id,
                     'title'=> $location->title,
                     'image'=> $location->image,
+                    'type'=> $location->type,
                     'description'=> $location->description
                 ]
             ];

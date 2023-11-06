@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-dark text-white">
-                    Rumah Sakit
+                    Apotek
                 </div>
                 <div class="card-body">
                     <div wire:ignore id='map' style="width: 100%; height: 70vh;" position="fixed"></div>
@@ -49,10 +49,10 @@
             zoom: 12
             });
 
-            const loadLocations = (geoJsonRs) => {
-                geoJsonRs.features.forEach((location) => {
+            const loadLocations = (geoJsonApt) => {
+                geoJsonApt.features.forEach((location) => {
                     const {geometry, properties} = location
-                    const {iconSize, locationId, title, image, description, type} = properties
+                    const {iconSize, locationId, title, image, description, type, Resep} = properties
 
                     let markerElement = document.createElement('div')
                     markerElement.className = 'marker' + locationId
@@ -78,6 +78,10 @@
                                             <td>Description</td> 
                                             <td>${description}</td>              
                                         </tr>
+                                        <tr>
+                                            <td>Menerima Resep Dokter</td> 
+                                            <td><img src="${Resep}"loading="lazy" class="img-fluid" width="50" height="50"></td>              
+                                        </tr>
                                     </tbody>
                                 </table>
                                 <a type="button" class="btn btn-primary" href="${type}" text-align="center">Lihat Detail</a>
@@ -94,7 +98,7 @@
                 })
             }
 
-            loadLocations({!!$geoJsonRs!!})
+            loadLocations({!!$geoJsonApt!!})
 
             const style = "satellite-v9"
             // light-v10, outdoor-v11, dark-v10, street-v11 

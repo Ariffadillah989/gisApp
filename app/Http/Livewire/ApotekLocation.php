@@ -3,15 +3,15 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\rs_location;
+use App\Models\Apotek;
 
-class RsLocation extends Component
+class ApotekLocation extends Component
 {
     public $long, $lat;
-    public $geoJsonRs;
+    public $geoJsonApt;
 
     private function loadLocations(){
-        $locations = rs_location::orderBy('created_at', 'desc')->get();
+        $locations = Apotek::orderBy('created_at', 'desc')->get();
 
         $customsLocations = [];
 
@@ -27,6 +27,7 @@ class RsLocation extends Component
                     'title'=> $location->title,
                     'image'=> $location->image,
                     'type'=> $location->type,
+                    'Resep'=> $location->Resep,
                     'description'=> $location->description
                 ]
             ];
@@ -37,13 +38,13 @@ class RsLocation extends Component
             'features' => $customsLocations
         ];
 
-        $geoJsonRs = collect($geoLocation)->toJson();
-        $this->geoJsonRs = $geoJsonRs;
+        $geoJsonApt = collect($geoLocation)->toJson();
+        $this->geoJsonApt = $geoJsonApt;
     }
 
     public function render()
     {
         $this->loadLocations();
-        return view('livewire.rs-location');
+        return view('livewire.apotek-location');
     }
 }

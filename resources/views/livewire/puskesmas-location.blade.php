@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-dark text-white">
-                    Rumah Sakit
+                    Puskesmas
                 </div>
                 <div class="card-body">
                     <div wire:ignore id='map' style="width: 100%; height: 70vh;" position="fixed"></div>
@@ -49,8 +49,8 @@
             zoom: 12
             });
 
-            const loadLocations = (geoJsonRs) => {
-                geoJsonRs.features.forEach((location) => {
+            const loadLocations = (geoJsonPus) => {
+                geoJsonPus.features.forEach((location) => {
                     const {geometry, properties} = location
                     const {iconSize, locationId, title, image, description, type} = properties
 
@@ -94,7 +94,7 @@
                 })
             }
 
-            loadLocations({!!$geoJsonRs!!})
+            loadLocations({!!$geoJsonPus!!})
 
             const style = "satellite-v9"
             // light-v10, outdoor-v11, dark-v10, street-v11 

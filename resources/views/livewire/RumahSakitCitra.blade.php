@@ -1,4 +1,11 @@
-<div class="container-fluid">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rumah Sakit Citra Husada</title>
+    @livewireStyles
+</head>
+<body>
+  <div class="container-fluid">
     @include('layouts/sideBar')
         <div class="col-md-8">
             <div class="card">
@@ -25,38 +32,26 @@
                             <div class="card">
                               <div class="container">
                                 <h2>Ruang Rawat Inap</h2>
-                                <ul>
-                                    <li>Ruang Vip</li>
-                                    <li>Ruang Kelas 1</li>
-                                    <li>Ruang Kelas 2</li>
-                                </ul>
+                                <a href="/detailruang" class="btn btn-primary" style="margin: 5%">Lihat Lebih Lengkap</a>
+
                               </div>
                             </div>
                           </div>
                         
                           <div class="column">
                             <div class="card">
-                              <div class="container">
-                                <h2>Ruang Rawat Jalan</h2>
-                                <ul>
-                                <li>POLI JANTUNG </li>
-                                <li>POLI BEDAH </li>
-                                <li>POLI ANAK </li>
-                                <li>POLI GIGI </li>
-                                </ul>
-                                <a href="https://rsucitrahusada.com/user/fasilitas_detail/pelayanan-rawat-jalan" class="btn btn-primary">Lihat Lebih Lengkap</a>
+                              <div class="container" style="position: relative">
+                                <h2 style="text-align: center">Program Tersedia</h2>
+                                <a href="/detailruang" class="btn btn-primary" style="margin: 5%">Lihat Lebih Lengkap</a>
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="column">
                             <div class="card">
                               <div class="container">
-                                <h2> Program</h2>
-                                <ul>
-                                <li>Program Diet </li>
-                                <li>Program Tepat Sehat </li>
-                                </ul>
+                                <h2>Fasilitas Lainnya</h2>
+                                <a href="/detailruang" class="btn btn-primary" style="margin: 5%">Lihat Lebih Lengkap</a>
                               </div>
                             </div>
                           </div>
@@ -103,13 +98,18 @@
     }
     
     .container {
-      padding: 0 16px;
+      padding: 0 20px;
+      height: 100px;
+      position: relative;
+      
     }
     
     .container::after, .row::after {
       content: "";
       clear: both;
       display: table;
+
+      
     }
     
     .title {
@@ -140,4 +140,9 @@
     }
     </style>
     </head>
-    <body>
+
+
+
+  @livewireScripts
+</body>
+</html>

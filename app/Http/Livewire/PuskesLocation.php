@@ -3,15 +3,15 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\rs_location;
+use App\Models\Puskesmas;
 
-class RsLocation extends Component
+class PuskesLocation extends Component
 {
     public $long, $lat;
-    public $geoJsonRs;
+    public $geoJsonPus;
 
     private function loadLocations(){
-        $locations = rs_location::orderBy('created_at', 'desc')->get();
+        $locations = Puskesmas::orderBy('created_at', 'desc')->get();
 
         $customsLocations = [];
 
@@ -37,13 +37,13 @@ class RsLocation extends Component
             'features' => $customsLocations
         ];
 
-        $geoJsonRs = collect($geoLocation)->toJson();
-        $this->geoJsonRs = $geoJsonRs;
+        $geoJsonPus = collect($geoLocation)->toJson();
+        $this->geoJsonPus = $geoJsonPus;
     }
 
     public function render()
     {
         $this->loadLocations();
-        return view('livewire.rs-location');
+        return view('livewire.puskesmas-location');
     }
 }
