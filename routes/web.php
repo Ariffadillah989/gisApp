@@ -8,9 +8,13 @@ use App\Http\Livewire\RumahSakitMufid;
 use App\Http\Livewire\PuskesLocation;
 use App\Http\Livewire\ApotekLocation;
 use App\Http\Livewire\RuangRawatInap;
-use App\Http\Livewire\RsuTgkChik;
-use App\Http\Livewire\RsIbnuSina;
-use App\Http\Livewire\PusSigli;
+use App\Http\Livewire\TgkRuangRawatInap;
+use App\Http\Livewire\IbnuSinaRuangRawatInap;
+use App\Http\Livewire\MufidRuangRawatInap;
+use App\Http\Livewire\PuskesmasRuangRawatInap;
+use App\Http\Livewire\Auth\Login;
+use App\Http\Livewire\Auth\Register;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +28,15 @@ use App\Http\Livewire\PusSigli;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
+Auth::routes(['login' => false, 'register' => false]);
+
+route::middleware('guest')->group(function(){
+    Route::get('/login',Login::class)->name('login');
+    Route::get('/register',Register::class)->name('register');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/map', MapLocation::class);
@@ -34,10 +44,29 @@ Route::get('/puskesmas', PuskesLocation::class);
 Route::get('/apotek', ApotekLocation::class);
 Route::get('/rs-location', RsLocation::class);
 Route::get('/rscitra', RumahSakitCitra::class);
-Route::get('/rsmufid', RumahSakitMufid::class);
+Route::get('/tgkchikrs', function(){
+    return view('livewire.TgkChikDetail');
+});
+
+Route::get('/rscitra', function(){
+    return view('livewire.RumahSakitCitra
+    ');
+});
+
+Route::get('/pussigli', function(){
+    return view('livewire.PuskesmasSigli');
+});
+
+Route::get('/rsmufid', function(){
+    return view('livewire.RsMufid');
+});
+
+Route::get('/rsibnusina', function(){
+    return view('livewire.RsIbnuSina');
+});
+
 Route::get('/detailruang', RuangRawatInap::class);
-Route::get('/rsu', RsuTgkChik::class);
-Route::get('/rsibnusina', RsIbnuSina::class);
-Route::get('/pussigli', PusSigli::class);
-// Route::view('/rsibnusina', 'livewire.RsIbnuSina');
-// Route::view('/', 'livewire.RsuTgkChik');
+Route::get('/detailruangtgkchik', TgkRuangRawatInap::class);
+Route::get('/detailruangibnu', IbnuSinaRuangRawatInap::class);
+Route::get('/detailruangmufid', MufidRuangRawatInap::class);
+Route::get('/detailruangpuskesmas', PuskesmasRuangRawatInap::class);

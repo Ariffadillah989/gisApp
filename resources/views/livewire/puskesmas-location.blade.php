@@ -31,6 +31,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="card-body">
+                    <label>Fasilitas Kesehatan yang tersedia:</label>
+                    @forEach($datas as $data)
+                    <li>{{$data ['title']}}</li>
+                    @endforeach
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div> 
     </div>
