@@ -3,6 +3,7 @@
 
 <h1 style="text-align:center;">Rumah Sakit Ibnu Sina</h1>
 <div class="section_our_solution">
+  @include('layouts/homeButton')
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="our_solution_category">

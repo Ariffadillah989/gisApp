@@ -5,6 +5,7 @@
     @livewireStyles
 </head>
 <body>
+  @include('layouts/homeButton')
   <div class="container py-5">
     <div class="row text-center text-white mb-5">
         <div class="col-lg-7 mx-auto">
