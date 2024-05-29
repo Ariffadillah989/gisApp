@@ -8,7 +8,7 @@
                 Navigasi
                 </div>
                     <div class="w3-bar-block" style="width: 120%; left: 30px;" >
-                      <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+                      <a href="/map" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
                       <a href="/rs-location" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Rumah Sakit</a> 
                       <a href="/puskesmas" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Puskesmas</a> 
                       <a href="/apotek" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Apotek</a> 
