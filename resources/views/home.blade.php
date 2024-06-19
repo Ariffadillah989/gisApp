@@ -67,9 +67,7 @@ body {font-size:16px;}
     </div>
 
     <div class="w3-half">
-      <img src="/w3images/atrium.jpg" style="width:100%" onclick="onClick(this)" alt="Windows for the atrium">
-      <img src="/w3images/bedroom.jpg" style="width:100%" onclick="onClick(this)" alt="Bedroom and office in one space">
-      <img src="/w3images/livingroom2.jpg" style="width:100%" onclick="onClick(this)" alt="Scandinavian design">
+      <src="/w3images/livingroom2.jpg" style="width:100%" onclick="onClick(this)" alt="Scandinavian design">
     </div>
   </div>
 
@@ -84,28 +82,14 @@ body {font-size:16px;}
 
   <!-- Services -->
   <div class="w3-container" id="services" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Services.</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Layanan.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
-    <p>Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <p>Kami adalah developer membantu masyarakat untuk lebih paham akan kesehatan</p>
+    <p>Aplikasi ini dibangun atas dasar untuk meningkatkan kesadaran masyarakat akan fasilitas kesehatan yang ada disekitar.
+      Khususnya untuk masyarakat kota sigli
     </p>
   </div>
-  
-  <!-- Designers -->
-  <div class="w3-container" id="designers" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Designers.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>The best team in the world.</p>
-    <p>We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
-    <p><b>Our designers are thoughtfully chosen</b>:</p>
-  </div>
-
-  <!-- The Team -->
+<!--   
   <div class="w3-row-padding w3-grayscale">
     <div class="w3-col m4 w3-margin-bottom">
       <div class="w3-light-grey">
@@ -139,7 +123,6 @@ body {font-size:16px;}
     </div>
   </div>
 
-  <!-- Packages / Pricing Tables -->
   <div class="w3-container" id="packages" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Packages.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
@@ -184,7 +167,6 @@ body {font-size:16px;}
     </div>
   </div>
   
-  <!-- Contact -->
   <div class="w3-container" id="contact" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
@@ -204,13 +186,13 @@ body {font-size:16px;}
       </div>
       <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
     </form>  
-  </div>
+  </div> -->
 
 <!-- End page content -->
 </div>
 
 <!-- W3.CSS Container -->
-<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+<!-- <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div> -->
 
 <script>
 // Script to open and close sidebar

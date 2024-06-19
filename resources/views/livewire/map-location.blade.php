@@ -18,7 +18,7 @@
         <div id="kotak2" class="col-md-6"  >
             <div class="card">
                 <div class="card-header bg-dark text-white">
-                 Home
+                 Lokasi
                 </div>
                 <div class="card-body">
                     <div wire:ignore id='map' style="width: 100%; height: 70vh;" position="fixed"></div>
@@ -93,7 +93,10 @@
 
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-dark text-white btn-block"> Submit Lokasi Baru</button>
+                            <button type="submit" class="btn btn-dark text-white btn-block"> {{$isEdit ? "Update Lokasi" : "Submit Lokasi Baru"}}</button>
+                            @if($isEdit)
+                            <button wire:click="deleteLocation" type="button" class="btn btn-danger text-white btn-block">Hapus Lokasi</button>
+                            @endif
                         </div>
                         @endif
                     </form>
@@ -148,11 +151,9 @@
 
 
             const loadLocations = (geoJson) => {
-
                 geoJson.features.forEach((location) => {
                     const {geometry, properties} = location
                     const {iconSize, locationId, title, image, description, type, jenis} = properties
-
                     let markerElement = document.createElement('div');
                     markerElement.className = 'marker' + locationId;
                     markerElement.id = locationId;
@@ -193,8 +194,8 @@
                                 <a type="button" class="btn btn-primary" href="${type}" text-align="center">Lihat Detail</a>
                             </div>`
 
-                    markerElement.addEventListener('click', (e) => {  
-                        const locationId = e.toElement.id
+                    markerElement.addEventListener('click', e => { 
+                        const locationId = e.target.id // bisa pake ini e.target.getAttribute("id")
                         @this.findLocationById(locationId)
                         }
                     )
@@ -213,13 +214,28 @@
 
             loadLocations({!! $geoJson !!})
 
-            window.addEventListener('locationAdded', (e) =>{
+            window.addEventListener('locationAdded', (e) => {
                 loadLocations(JSON.parse(e.detail))
+            });
+
+            window.addEventListener('locationUpdated', (e) => {
+                loadLocations(JSON.parse(e.detail));
+                $('.mapboxgl-popup').remove();
             })
 
-            window.addEventListener('updateLocation', (e) =>{
+            window.addEventListener('deleteLocation', (e) =>{
                 loadLocations(JSON.parse(e.detail))
-                $('.mapboxgl-popup').remove()
+
+                console.log(e.detail)
+                swal({
+                    title: "Location Delete!",
+                    text: "Your location deleted sucessfully!",
+                    icon: "success",
+                    button: "Ok",
+                }).then((value) => {
+                    $('.marker' + e.detail).remove();
+                    $('.mapboxgl-popup').remove();
+                });
             })
 
             const style = "satellite-v9"
@@ -234,8 +250,7 @@
 
                 @this.long = longitude
                 @this.lat = lattidude
-            }) 
-
+            })
             @this.image = image
         });
         

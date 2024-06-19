@@ -16,6 +16,6 @@ class PuskesmasRuangRawatInap extends Component
 
     public function render()
     {
-        return view('livewire.detailpage.IbnuRawatInap');
+        return view('livewire.detailpage.PuskesRawatInap');
     }
 }

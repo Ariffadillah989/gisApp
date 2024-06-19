@@ -10,7 +10,7 @@
   <div class="container py-5">
     <div class="row text-center text-white mb-5">
         <div class="col-lg-7 mx-auto">
-            <h1 class="display-4">Ruang Rawat Inap</h1>
+            <h1 class="display-4">Ruang Rawat Inap Rumah Sakit TGK Chik Di Tiro Sigli</h1>
         </div>
     </div>
   <div id="kotak1" class="col-md11">

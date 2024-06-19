@@ -27,7 +27,6 @@ class MapLocation extends Component
         $locations = Location::orderBy('created_at', 'desc')->get();
 
         $customsLocations = [];
-
         foreach($locations as $location){
             $customsLocations[] = [
                 'type' => 'Features',
@@ -36,7 +35,7 @@ class MapLocation extends Component
                     'type' => 'Point'
                 ],
                 'properties'=> [
-                    'locationId' => $location->Id,
+                    'locationId' => $location->id,
                     'title'=> $location->title,
                     'image'=> $location->image,
                     'type'=> $location->type,
@@ -126,6 +125,7 @@ class MapLocation extends Component
             'jenis' => 'required',
             'type' => 'required',
         ]);
+
         $location = Location::findOrFail($this->locationId);
 
         if($this->image){
@@ -135,10 +135,11 @@ class MapLocation extends Component
                 $this->image,
                 $imagename
             );
+            
             $updateData = [
                 'title' => $this->title,
                 'description' => $this->description,
-                'image' => $this->imageName,
+                'image' => $imagename,
             ];
         }else{
             $updateData = [
@@ -147,11 +148,22 @@ class MapLocation extends Component
             ];
         }
         $location->update($updateData);
-
+        session()->flash('info', 'Product Updated Successfully');
+        $this->imageUrl = "";
         $this->clearForm();
         $this->loadLocations();
-        $this -> dispatchBrowserEvent('updateLocation', $this->geoJson);
+        $this -> dispatchBrowserEvent('locationUpdated', $this->geoJson);
 
+
+    }
+
+    public function deleteLocation(){
+        $location = Location::findOrFail($this->locationId);
+        $location->delete();
+
+        $this->imageUrl = "";
+        $this->clearForm();
+        $this->dispatchBrowserEvent('deleteLocation', $location->id);
     }
 
     public function render()

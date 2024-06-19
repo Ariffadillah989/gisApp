@@ -38,14 +38,20 @@ route::middleware('guest')->group(function(){
     Route::get('/register',Register::class)->name('register');
 });
 
-route::middleware('auth')->group(function(){
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/map', MapLocation::class);
-    Route::get('/puskesmas', PuskesLocation::class);
-    Route::get('/apotek', ApotekLocation::class);
-    Route::get('/rs-location', RsLocation::class);
-    Route::get('/rscitra', RumahSakitCitra::class);
-});
+Route::get('/map', MapLocation::class);
+Route::get('/puskesmas', PuskesLocation::class);
+Route::get('/apotek', ApotekLocation::class);
+Route::get('/rs-location', RsLocation::class);
+
+
+// route::middleware('auth')->group(function(){
+//     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//     Route::get('/map', MapLocation::class);
+//     Route::get('/puskesmas', PuskesLocation::class);
+//     Route::get('/apotek', ApotekLocation::class);
+//     Route::get('/rs-location', RsLocation::class);
+//     Route::get('/rscitra', RumahSakitCitra::class);
+// });
 
 Route::get('/tgkchikrs', function(){
     return view('livewire.TgkChikDetail');
